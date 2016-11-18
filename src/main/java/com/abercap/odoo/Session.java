@@ -170,7 +170,7 @@ public class Session {
 	{
 		return OdooXmlRpcProxy.getDatabaseList(protocol, host, port);
 	}
-	
+
 	/**
 	 * Executes any command on the server linked to the /xmlrpc/object service.
 	 * All parameters are prepended by: "databaseName,userID,password"
@@ -181,19 +181,40 @@ public class Session {
 	 * @throws XmlRpcException
 	 */
 	public Object executeCommand(final String objectName, final String commandName, final Object[] parameters) throws XmlRpcException {
+		Object[] params = prepareParams(objectName, commandName, parameters);
+
+		OdooXmlRpcProxy objectClient = new OdooXmlRpcProxy(protocol, host, port, RPCServices.RPC_OBJECT);
+		return objectClient.execute("execute", params);
+	}
+
+	/**
+	 * Executes any command on the server linked to the /xmlrpc/object service.
+	 * All parameters are prepended by: "databaseName,userID,password"
+	 * @param objectName Object or model name to execute the command on
+	 * @param commandName Command name to execute
+	 * @param parameters List of parameters for the command.  For easy of use, consider the OdooCommand object or ObjectAdapter
+	 * @return The result of the call
+	 * @throws XmlRpcException
+	 */
+	public Object executeKWCommand(final String objectName, final String commandName, final Object[] parameters) throws XmlRpcException {
+		Object[] params = prepareParams(objectName, commandName, parameters);
+
+		OdooXmlRpcProxy objectClient = new OdooXmlRpcProxy(protocol, host, port, RPCServices.RPC_OBJECT);
+		return objectClient.execute("execute_kw", params);
+	}
+
+	private Object[] prepareParams(String objectName, String commandName, Object[] parameters) {
 		Object[] connectionParams = new Object[] {databaseName,userID,password,objectName,commandName};
-		
+
 		// Combine the connection parameters and command parameters
 		Object[] params = new Object[connectionParams.length + (parameters == null ? 0 : parameters.length)];
 		System.arraycopy(connectionParams, 0, params, 0, connectionParams.length);
-		
+
 		if (parameters != null && parameters.length > 0)
 			System.arraycopy(parameters, 0, params, connectionParams.length, parameters.length);
-		   
-		OdooXmlRpcProxy objectClient = new OdooXmlRpcProxy(protocol, host, port, RPCServices.RPC_OBJECT);
-		return objectClient.execute("execute", params);		
+		return params;
 	}
-	
+
 	/**
 	 * Executes a workflow by sending a signal to the workflow engine for a specific object.
 	 * This functions calls the 'exec_workflow' method on the object
