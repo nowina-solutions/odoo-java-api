@@ -10,3 +10,16 @@ bin/
 
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+.idea/compiler.xml
+.idea/copyright/profiles_settings.xml
+.idea/encodings.xml
+.idea/libraries/Maven__junit_junit_3_8_1.xml
+.idea/libraries/Maven__org_apache_ws_commons_util_ws_commons_util_1_0_2.xml
+.idea/libraries/Maven__org_apache_xmlrpc_xmlrpc_client_3_1_3.xml
+.idea/libraries/Maven__org_apache_xmlrpc_xmlrpc_common_3_1_3.xml
+.idea/libraries/Maven__xml_apis_xml_apis_1_0_b2.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+odoo-java-api.iml
