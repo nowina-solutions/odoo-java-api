@@ -1,12 +1,17 @@
-# Maven
-target/
-bin/
-
-# Eclipse
-.settings/
-
-# Eclipse Core
-.project
-
-# JDT-specific (Eclipse Java Development Tools)
-.classpath
+atlassian-ide-plugin.xml
+target
+.*
+.idea
+pom.xml.versionsBackup
+pom.xml.releaseBackup
+target
+.*
+*.log
+*.iml
+overlays
+.*
+*.iml
+.idea
+.svn
+target
+*/target/
