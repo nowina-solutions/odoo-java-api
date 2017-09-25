@@ -88,6 +88,13 @@
 			</plugin>
 		</plugins>
 	</build>
+	<repositories>
+		<repository>
+			<id>forge.nowina.lu</id>
+			<name>Internal repository</name>
+			<url>http://forge.nowina.local/nexus/content/repositories/releases/</url>
+		</repository>
+	</repositories>
 	<distributionManagement>
 		<repository>
 			<id>forge.nowina.lu</id>
