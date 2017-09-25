@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>lu.nowina</groupId>
 	<artifactId>odoo-java-api</artifactId>
-	<version>1.2.2.BUILD-SNAPSHOT</version>
+	<version>1.2.3.BUILD</version>
 	<name>Odoo Java API</name>
 	<description>A Java Wrapper for Odoo</description>
 	<url>https://github.com/aberdeen-services/odoo-java-api</url>
@@ -33,8 +33,8 @@
 		<maven-source-plugin.version>3.0.0</maven-source-plugin.version>
 		<maven-javadoc-plugin.version>2.10.3</maven-javadoc-plugin.version>
 		<ws-commons-util.version>1.0.2</ws-commons-util.version>
-		<xmlrpc-client.version>3.1.3-ODOO</xmlrpc-client.version>
-		<xmlrpc-common.version>3.1.3-ODOO</xmlrpc-common.version>
+		<xmlrpc-client.version>3.1.4-ODOO</xmlrpc-client.version>
+		<xmlrpc-common.version>3.1.4-ODOO</xmlrpc-common.version>
 	</properties>
 	<dependencies>
 		<dependency>
