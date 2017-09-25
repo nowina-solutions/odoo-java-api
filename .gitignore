@@ -4,6 +4,7 @@ bin/
 
 # Eclipse
 .settings/
+.idea
 
 # Eclipse Core
 .project
