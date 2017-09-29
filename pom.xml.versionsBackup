@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>lu.nowina</groupId>
 	<artifactId>odoo-java-api</artifactId>
-	<version>1.2.4-SNAPSHOT</version>
+	<version>1.2.3.BUILD</version>
 	<name>Odoo Java API</name>
 	<description>A Java Wrapper for Odoo</description>
 	<url>https://github.com/aberdeen-services/odoo-java-api</url>
